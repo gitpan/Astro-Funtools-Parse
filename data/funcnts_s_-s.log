@@ -1,0 +1,35 @@
+# source
+#   data file:		/home/dj/tmp/002_02_180_10000_new_evt.fits
+#   degrees/pix:	0.000136639
+# background
+#   constant value:	0.000000
+# column units
+#   area:		arcsec**2
+#   surf_bri:		cnts/arcsec**2
+#   err_rate:		cnts/arcsec**2
+
+# summed background-subtracted results
+upto       counts     error   background    berror      area  surf_bri  err_rate
+---- ------------ --------- ------------ --------- --------- --------- ---------
+   1     9212.000    95.979        0.000     0.000     90.25   102.068     1.063
+   2     9303.000    96.452        0.000     0.000    366.09    25.412     0.263
+
+
+# background-subtracted results
+ reg       counts     error   background    berror      area  surf_bri  err_rate
+---- ------------ --------- ------------ --------- --------- --------- ---------
+   1     9212.000    95.979        0.000     0.000     90.25   102.068     1.063
+   2       91.000     9.539        0.000     0.000    275.84     0.330     0.035
+
+
+# the following source and background components were used:
+source region(s)
+----------------
+annulus(4341,4096,0,22,n=2)
+
+ reg       counts    pixels      sumcnts    sumpix
+---- ------------ --------- ------------ ---------
+   1     9212.000       373     9212.000       373
+   2       91.000      1140     9303.000      1513
+
+
