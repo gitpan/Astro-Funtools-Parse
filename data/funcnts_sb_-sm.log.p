@@ -1,28 +1,12 @@
 $c = {
-       'hdr' => {
-                  'background' => {
-                                    'data_file' => '/home/dj/tmp/002_02_180_10000_new_evt.fits'
-                                  },
-                  'column units' => {
-                                      'area' => 'arcsec**2',
-                                      'surf_bri' => 'cnts/arcsec**2',
-                                      'err_rate' => 'cnts/arcsec**2'
-                                    },
-                  'source' => {
-                                'degrees/pix' => '0.000136639',
-                                'data_file' => '/home/dj/tmp/002_02_180_10000_new_evt.fits'
-                              }
-                },
        'source' => {
+                     'regions' => {
+                                    'regions' => [
+                                                   'annulus(4164,4239,0,38.5198,n=2)'
+                                                 ],
+                                    'title' => 'source_region(s)'
+                                  },
                      'table' => {
-                                  'widths' => [
-                                                4,
-                                                12,
-                                                9,
-                                                12,
-                                                9
-                                              ],
-                                  'comments' => [],
                                   'names' => [
                                                'reg',
                                                'counts',
@@ -33,84 +17,103 @@ $c = {
                                   'records' => [
                                                  {
                                                    'reg' => '1',
-                                                   'counts' => '9212.000',
-                                                   'pixels' => '373',
-                                                   'sumcnts' => '9212.000',
-                                                   'sumpix' => '373'
+                                                   'sumcnts' => '5416.000',
+                                                   'sumpix' => '1177',
+                                                   'pixels' => '1177',
+                                                   'counts' => '5416.000'
                                                  },
                                                  {
                                                    'reg' => '2',
-                                                   'counts' => '91.000',
-                                                   'pixels' => '1140',
-                                                   'sumcnts' => '9303.000',
-                                                   'sumpix' => '1513'
+                                                   'sumcnts' => '39086.000',
+                                                   'sumpix' => '4669',
+                                                   'pixels' => '3492',
+                                                   'counts' => '33670.000'
                                                  }
-                                               ]
-                                },
-                     'regions' => {
-                                    'title' => 'source region(s)',
-                                    'regions' => [
-                                                   'annulus(4341,4096,0,22,n=2)'
-                                                 ]
-                                  }
+                                               ],
+                                  'widths' => [
+                                                4,
+                                                12,
+                                                9,
+                                                12,
+                                                9
+                                              ],
+                                  'comments' => [
+                                                  ' summed_source_data'
+                                                ]
+                                }
                    },
-       'bkgd_sub' => {
-                       'widths' => [
-                                     4,
-                                     12,
-                                     9,
-                                     12,
-                                     9,
-                                     9,
-                                     9,
-                                     9
-                                   ],
-                       'comments' => [
-                                       ' background-subtracted results'
-                                     ],
-                       'names' => [
-                                    'reg',
-                                    'counts',
-                                    'error',
-                                    'background',
-                                    'berror',
-                                    'area',
-                                    'surf_bri',
-                                    'err_rate'
-                                  ],
-                       'records' => [
-                                      {
-                                        'error' => '95.979',
-                                        'reg' => '1',
-                                        'area' => '90.25',
-                                        'background' => '0.532',
-                                        'counts' => '9211.468',
-                                        'surf_bri' => '102.063',
-                                        'err_rate' => '1.063',
-                                        'berror' => '0.142'
-                                      },
-                                      {
-                                        'error' => '9.545',
-                                        'reg' => '2',
-                                        'area' => '275.84',
-                                        'background' => '1.326',
-                                        'counts' => '89.674',
-                                        'surf_bri' => '0.325',
-                                        'err_rate' => '0.035',
-                                        'berror' => '0.332'
+       'hdr' => {
+                  'source' => {
+                                'data_file' => 'acisf05124N001_evt2_gsf_ds_lc_sorted.fits',
+                                'arcsec/pixel' => '0.492'
+                              },
+                  'column units' => {
+                                      'area' => 'arcsec**2',
+                                      'surf_bri' => 'cnts/arcsec**2',
+                                      'surf_err' => 'cnts/arcsec**2'
+                                    },
+                  'background' => {
+                                    'data_file' => 'acisf05124N001_evt2_gsf_ds_lc_sorted.fits',
+                                    'arcsec/pixel' => '0.492'
+                                  }
+                },
+       'sum_bkgd_sub' => {
+                           'table' => {
+                                        'names' => [
+                                                     'upto',
+                                                     'net_counts',
+                                                     'error',
+                                                     'background',
+                                                     'berror',
+                                                     'area',
+                                                     'surf_bri',
+                                                     'surf_err'
+                                                   ],
+                                        'records' => [
+                                                       {
+                                                         'area' => '284.91',
+                                                         'background' => '21.000',
+                                                         'berror' => '4.583',
+                                                         'upto' => '1',
+                                                         'net_counts' => '5395.000',
+                                                         'error' => '73.736',
+                                                         'surf_bri' => '18.936',
+                                                         'surf_err' => '0.259'
+                                                       },
+                                                       {
+                                                         'area' => '1130.20',
+                                                         'background' => '109.000',
+                                                         'berror' => '10.440',
+                                                         'upto' => '2',
+                                                         'net_counts' => '38977.000',
+                                                         'error' => '197.977',
+                                                         'surf_bri' => '34.487',
+                                                         'surf_err' => '0.175'
+                                                       }
+                                                     ],
+                                        'widths' => [
+                                                      4,
+                                                      12,
+                                                      9,
+                                                      12,
+                                                      9,
+                                                      9,
+                                                      9,
+                                                      9
+                                                    ],
+                                        'comments' => [
+                                                        ' summed background-subtracted results'
+                                                      ]
                                       }
-                                    ]
-                     },
+                         },
        'bkgd' => {
+                   'regions' => {
+                                  'regions' => [
+                                                 'annulus(4264,4223,0,38.5198,n=2)'
+                                               ],
+                                  'title' => 'background_region(s)'
+                                },
                    'table' => {
-                                'widths' => [
-                                              4,
-                                              12,
-                                              9,
-                                              12,
-                                              9
-                                            ],
-                                'comments' => [],
                                 'names' => [
                                              'reg',
                                              'counts',
@@ -121,72 +124,78 @@ $c = {
                                 'records' => [
                                                {
                                                  'reg' => '1',
-                                                 'counts' => '14.000',
-                                                 'pixels' => '9820',
-                                                 'sumcnts' => '14.000',
-                                                 'sumpix' => '9820'
+                                                 'sumcnts' => '21.000',
+                                                 'sumpix' => '1177',
+                                                 'pixels' => '1177',
+                                                 'counts' => '21.000'
                                                },
                                                {
                                                  'reg' => '2',
-                                                 'counts' => '16.000',
-                                                 'pixels' => '13752',
-                                                 'sumcnts' => '30.000',
-                                                 'sumpix' => '23572'
+                                                 'sumcnts' => '109.000',
+                                                 'sumpix' => '4669',
+                                                 'pixels' => '3492',
+                                                 'counts' => '88.000'
                                                }
-                                             ]
-                              },
-                   'regions' => {
-                                  'title' => 'background region(s)',
-                                  'regions' => [
-                                                 'annulus(4341,4096,50,100,n=2)'
-                                               ]
-                                }
+                                             ],
+                                'widths' => [
+                                              4,
+                                              12,
+                                              9,
+                                              12,
+                                              9
+                                            ],
+                                'comments' => [
+                                                ' summed_background_data'
+                                              ]
+                              }
                  },
-       'sum_bkgd_sub' => {
-                           'widths' => [
-                                         4,
-                                         12,
-                                         9,
-                                         12,
-                                         9,
-                                         9,
-                                         9,
-                                         9
-                                       ],
-                           'comments' => [
-                                           ' summed background-subtracted results'
-                                         ],
-                           'names' => [
-                                        'upto',
-                                        'counts',
-                                        'error',
-                                        'background',
-                                        'berror',
-                                        'area',
-                                        'surf_bri',
-                                        'err_rate'
-                                      ],
-                           'records' => [
-                                          {
-                                            'error' => '95.979',
-                                            'area' => '90.25',
-                                            'upto' => '1',
-                                            'background' => '0.532',
-                                            'counts' => '9211.468',
-                                            'surf_bri' => '102.063',
-                                            'err_rate' => '1.063',
-                                            'berror' => '0.142'
-                                          },
-                                          {
-                                            'error' => '96.453',
-                                            'area' => '366.09',
-                                            'upto' => '2',
-                                            'background' => '1.926',
-                                            'counts' => '9301.074',
-                                            'surf_bri' => '25.406',
-                                            'err_rate' => '0.263',
-                                            'berror' => '0.352'
-                                          }
-                                        ]
-                         }
+       'bkgd_sub' => {
+                       'table' => {
+                                    'names' => [
+                                                 'reg',
+                                                 'net_counts',
+                                                 'error',
+                                                 'background',
+                                                 'berror',
+                                                 'area',
+                                                 'surf_bri',
+                                                 'surf_err'
+                                               ],
+                                    'records' => [
+                                                   {
+                                                     'net_counts' => '5395.000',
+                                                     'reg' => '1',
+                                                     'area' => '284.91',
+                                                     'background' => '21.000',
+                                                     'error' => '73.736',
+                                                     'surf_bri' => '18.936',
+                                                     'berror' => '4.583',
+                                                     'surf_err' => '0.259'
+                                                   },
+                                                   {
+                                                     'net_counts' => '33582.000',
+                                                     'reg' => '2',
+                                                     'area' => '845.29',
+                                                     'background' => '88.000',
+                                                     'error' => '183.734',
+                                                     'surf_bri' => '39.728',
+                                                     'berror' => '9.381',
+                                                     'surf_err' => '0.217'
+                                                   }
+                                                 ],
+                                    'widths' => [
+                                                  4,
+                                                  12,
+                                                  9,
+                                                  12,
+                                                  9,
+                                                  9,
+                                                  9,
+                                                  9
+                                                ],
+                                    'comments' => [
+                                                    ' background-subtracted results'
+                                                  ]
+                                  }
+                     }
      };

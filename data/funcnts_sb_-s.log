@@ -1,42 +1,43 @@
 # source
-#   data file:		/home/dj/tmp/002_02_180_10000_new_evt.fits
-#   degrees/pix:	0.000136639
+#   data_file:		acisf05124N001_evt2_gsf_ds_lc_sorted.fits
+#   arcsec/pixel:	0.492
 # background
-#   data file:		/home/dj/tmp/002_02_180_10000_new_evt.fits
+#   data_file:		acisf05124N001_evt2_gsf_ds_lc_sorted.fits
+#   arcsec/pixel:	0.492
 # column units
 #   area:		arcsec**2
 #   surf_bri:		cnts/arcsec**2
-#   err_rate:		cnts/arcsec**2
+#   surf_err:		cnts/arcsec**2
 
 # summed background-subtracted results
-upto       counts     error   background    berror      area  surf_bri  err_rate
+upto   net_counts     error   background    berror      area  surf_bri  surf_err
 ---- ------------ --------- ------------ --------- --------- --------- ---------
-   1     9211.525    95.979        0.475     0.087     90.25   102.063     1.063
-   2     9301.074    96.453        1.926     0.352    366.09    25.406     0.263
+   1     5388.522    73.641       27.478     2.632    284.91    18.913     0.258
+   2    38977.000   197.977      109.000    10.440   1130.20    34.487     0.175
 
 
 # background-subtracted results
- reg       counts     error   background    berror      area  surf_bri  err_rate
+ reg   net_counts     error   background    berror      area  surf_bri  surf_err
 ---- ------------ --------- ------------ --------- --------- --------- ---------
-   1     9211.525    95.979        0.475     0.087     90.25   102.063     1.063
-   2       89.549     9.543        1.451     0.265    275.84     0.325     0.035
+   1     5388.522    73.641       27.478     2.632    284.91    18.913     0.258
+   2    33588.478   183.660       81.522     7.808    845.29    39.736     0.217
 
 
-# the following source and background components were used:
-source region(s)
-----------------
-annulus(4341,4096,0,22,n=2)
+# source_region(s):
+# annulus(4164,4239,0,38.5198,n=2)
 
+# summed_source_data
  reg       counts    pixels      sumcnts    sumpix
 ---- ------------ --------- ------------ ---------
-   1     9212.000       373     9212.000       373
-   2       91.000      1140     9303.000      1513
+   1     5416.000      1177     5416.000      1177
+   2    33670.000      3492    39086.000      4669
 
-background region(s)
---------------------
-annulus(4341,4096,50,100,n=2)
 
+# background_region(s)
+# annulus(4264,4223,0,38.5198,n=2)
+
+# background_data
  reg       counts    pixels
 ---- ------------ ---------
-all        30.000     23572
+all       109.000      4669
 

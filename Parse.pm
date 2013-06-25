@@ -30,7 +30,7 @@ our @EXPORT = qw(
 	
 );
 
-our $VERSION = '0.04';
+our $VERSION = '0.08';
 
 use Data::LineBuffer;
 
@@ -84,60 +84,86 @@ sub parse_funcnts
 {
   my $what = shift;
 
-  my %results;
+  my @results;
 
   my $src = new Data::LineBuffer $what
     or croak( __PACKAGE__, "parse_funcnts: something wrong with argument\n");
 
-  $results{hdr} = _parse_header( $src );
-
-  # grab the first thing; it's a table
-  my $ln = $src->pos;
-  my $table = _parse_table( $src );
-
-  # is it a summed background-subtracted table?
-  if ( grep { 'upto' eq $_ } @{$table->{names}} )
+  LINE: while ( 1 )
   {
-    $results{sum_bkgd_sub} = $table;
-    # next thing is the real background subtracted table, then
-    $ln = $src->pos;
-    $results{bkgd_sub} = _parse_table( $src );
+    my %results;
 
-    # but we'll check on that!
-    croak( __PACKAGE__,
-	   "::parse_funcnts: line $ln: expected a background-subtracted ",
-	   "table but didn't find one!\n" )
-      unless grep { 'reg' eq $_ }
-                   @{$results{bkgd_sub}->{names}};
+    $results{hdr} = _parse_header( $src );
+
+    last unless %{$results{hdr}};
+  
+    # grab the first thing; it's a table
+    my $ln = $src->pos;
+    my $table = _parse_table( $src );
+  
+    # is it a summed background-subtracted table?
+    if ( grep { 'upto' eq $_ } @{$table->{names}} )
+    {
+      $results{sum_bkgd_sub}{table} = $table;
+      # next thing is the real background subtracted table, then
+      $ln = $src->pos;
+      $results{bkgd_sub}{table} = _parse_table( $src );
+  
+      # but we'll check on that!
+      croak( __PACKAGE__,
+  	   "::parse_funcnts: line $ln: expected a background-subtracted ",
+  	   "table but didn't find one!\n" )
+        unless grep { 'reg' eq $_ }
+                     @{$results{bkgd_sub}{table}->{names}};
+    }
+  
+    # nope, must be a background-subtracted table
+    else
+    {
+      $results{bkgd_sub}{table} = $table;
+      croak( __PACKAGE__,
+  	   "::parse_funcnts: line $ln: expected a background-subtracted ",
+  	   "table but didn't find one!\n" )
+        unless grep { 'reg' eq $_ }
+                     @{$table->{names}};
+    }
+  
+    # ok, now we're looking for regions, source and possibly background
+    # each region has a table after it.
+  
+    $results{source}{regions}  = _parse_funcnts_regions( $src );
+
+    $results{source}{table} = _parse_table( $src );
+  
+    # if there's a region left, it'll be the background
+  
+    my $regions = _parse_funcnts_regions( $src );
+    if ( %$regions )
+    {
+      if ( @{$regions->{regions}} )
+      {
+        $results{bkgd}{regions} = $regions;
+        $results{bkgd}{table}   = _parse_table( $src );
+      }
+      _skip_past_formfeed( $src );
+    }
+    push @results, \%results;
   }
+  return wantarray
+       ? @results
+       : $results[0];
+}
 
-  # nope, must be a background-subtracted table
-  else
+sub _skip_past_formfeed
+{
+  my $src = shift;
+
+  local $_;
+
+  for( my $ln = $src->pos; defined ($_ = $src->get) ; $ln = $src->pos )
   {
-    $results{bkgd_sub} = $table;
-    croak( __PACKAGE__,
-	   "::parse_funcnts: line $ln: expected a background-subtracted ",
-	   "table but didn't find one!\n" )
-      unless grep { 'reg' eq $_ }
-                   @{$table->{names}};
+    last if /^\f$/;
   }
-
-  # ok, now we're looking for regions, source and possibly background
-  # each region has a table after it.
-
-  $results{source}{regions}  = _parse_funcnts_regions( $src );
-  $results{source}{table} = _parse_table( $src );
-
-  # if there's a region left, it'll be the background
-
-  my $regions = _parse_funcnts_regions( $src );
-  if ( @{$regions->{regions}} )
-  {
-    $results{bkgd}{regions} = $regions;
-    $results{bkgd}{table}   = _parse_table( $src );
-  }
-
-  return  \%results;
 }
 
 
@@ -152,22 +178,18 @@ sub _parse_funcnts_regions
 
   while( defined ($_ = $src->get) )
   {
-    last if /^-{2,}/;
-
-    $title = $_;
+    return {} if /^\f$/;
+    next unless /^#\s+(.*)$/;
+    /^#\s+((source|background)_region\(s\))/;
+    return unless $_;
+    $title = $1;
+    last;
   }
 
   while( defined ($_ = $src->get) )
   {
-    next if /^\s*$/;
-    last if /^-{2,}/;
-    push @regions, $_;
-  }
-
-  if ( defined $_ )
-  {
-    $src->unget( $_ );
-    $src->unget( pop @regions );
+    last unless /^#\s+(.*)$/;
+    push @regions, $1;
   }
 
   { title => $title, regions => \@regions };
@@ -333,8 +355,11 @@ Funtools, see
   $funcnts = parse_funcnts( \@array );
 
 These parse the B<funcnts> output stored in the argument, and return a
-reference to a hash containing the results.  The hash will have the
-following keys (unless otherwise specified):
+reference to a hash containing the results.  If funcnts was run with
+the -i switch and more than one "interval" was used, a reference
+to an array consisting of references to anonymous hashes is returned,
+each hash corresponding to one of the intervals.
+The hashes will have the following keys (unless otherwise specified):
 
 =over 8
 
@@ -509,10 +534,25 @@ The tag C<:all> is available to export all symbols.
 
 =head1 LICENSE
 
-This software is released under the GNU General Public License.  You
-may find a copy at 
+Copyright (C) 2006 Smithsonian Astrophysical Observatory
 
-   http://www.fsf.org/copyleft/gpl.html
+This file is part of Astro::Funtools::Parse
+
+Astro::Funtools::Parse is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+Astro::Funtools::Parse is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+ong with this program; if not, write to the 
+      Free Software Foundation, Inc. 
+      51 Franklin Street, Fifth Floor
+      Boston, MA  02110-1301, USA
 
 =head1 AUTHOR
 

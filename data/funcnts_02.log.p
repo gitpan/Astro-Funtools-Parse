@@ -1,137 +1,6 @@
 $c = {
-       'hdr' => {
-                  'background' => {
-                                    'arcsec/pixel' => '0.492',
-                                    'data_file' => 's3_2000_5000_evt2.fits'
-                                  },
-                  'column units' => {
-                                      'surf_err' => 'cnts/arcsec**2',
-                                      'area' => 'arcsec**2',
-                                      'surf_bri' => 'cnts/arcsec**2'
-                                    },
-                  'source' => {
-                                'arcsec/pixel' => '0.492',
-                                'data_file' => 's3_2000_5000_evt2.fits'
-                              }
-                },
        'source' => {
-                     'table' => {
-                                  'widths' => [
-                                                4,
-                                                12,
-                                                9
-                                              ],
-                                  'comments' => [],
-                                  'names' => [
-                                               'reg',
-                                               'counts',
-                                               'pixels'
-                                             ],
-                                  'records' => [
-                                                 {
-                                                   'reg' => '1',
-                                                   'counts' => '3.000',
-                                                   'pixels' => '12'
-                                                 },
-                                                 {
-                                                   'reg' => '2',
-                                                   'counts' => '15.000',
-                                                   'pixels' => '25'
-                                                 },
-                                                 {
-                                                   'reg' => '3',
-                                                   'counts' => '17.000',
-                                                   'pixels' => '55'
-                                                 },
-                                                 {
-                                                   'reg' => '4',
-                                                   'counts' => '19.000',
-                                                   'pixels' => '85'
-                                                 },
-                                                 {
-                                                   'reg' => '5',
-                                                   'counts' => '24.000',
-                                                   'pixels' => '107'
-                                                 },
-                                                 {
-                                                   'reg' => '6',
-                                                   'counts' => '15.000',
-                                                   'pixels' => '130'
-                                                 },
-                                                 {
-                                                   'reg' => '7',
-                                                   'counts' => '15.000',
-                                                   'pixels' => '168'
-                                                 },
-                                                 {
-                                                   'reg' => '8',
-                                                   'counts' => '16.000',
-                                                   'pixels' => '187'
-                                                 },
-                                                 {
-                                                   'reg' => '9',
-                                                   'counts' => '26.000',
-                                                   'pixels' => '216'
-                                                 },
-                                                 {
-                                                   'reg' => '10',
-                                                   'counts' => '20.000',
-                                                   'pixels' => '232'
-                                                 },
-                                                 {
-                                                   'reg' => '11',
-                                                   'counts' => '32.000',
-                                                   'pixels' => '279'
-                                                 },
-                                                 {
-                                                   'reg' => '12',
-                                                   'counts' => '31.000',
-                                                   'pixels' => '289'
-                                                 },
-                                                 {
-                                                   'reg' => '13',
-                                                   'counts' => '30.000',
-                                                   'pixels' => '326'
-                                                 },
-                                                 {
-                                                   'reg' => '14',
-                                                   'counts' => '17.000',
-                                                   'pixels' => '350'
-                                                 },
-                                                 {
-                                                   'reg' => '15',
-                                                   'counts' => '20.000',
-                                                   'pixels' => '376'
-                                                 },
-                                                 {
-                                                   'reg' => '16',
-                                                   'counts' => '21.000',
-                                                   'pixels' => '406'
-                                                 },
-                                                 {
-                                                   'reg' => '17',
-                                                   'counts' => '24.000',
-                                                   'pixels' => '424'
-                                                 },
-                                                 {
-                                                   'reg' => '18',
-                                                   'counts' => '23.000',
-                                                   'pixels' => '450'
-                                                 },
-                                                 {
-                                                   'reg' => '19',
-                                                   'counts' => '18.000',
-                                                   'pixels' => '482'
-                                                 },
-                                                 {
-                                                   'reg' => '20',
-                                                   'counts' => '18.000',
-                                                   'pixels' => '508'
-                                                 }
-                                               ]
-                                },
                      'regions' => {
-                                    'title' => 'source_region(s)',
                                     'regions' => [
                                                    '# Region file format: CIAO version 1.0',
                                                    'annulus(4048,4133.25,0,2.0325203)',
@@ -158,244 +27,152 @@ $c = {
                                                    '-circle(4042.9545,4118.3713,2.7499999)',
                                                    '-circle(4045.7323,4124.0013,2.8749999)',
                                                    '-circle(4040.5,4154.75,1.75)'
-                                                 ]
-                                  }
+                                                 ],
+                                    'title' => 'source_region(s)'
+                                  },
+                     'table' => {
+                                  'names' => [
+                                               'reg',
+                                               'counts',
+                                               'pixels'
+                                             ],
+                                  'records' => [
+                                                 {
+                                                   'reg' => '1',
+                                                   'pixels' => '10',
+                                                   'counts' => '0.000'
+                                                 },
+                                                 {
+                                                   'reg' => '2',
+                                                   'pixels' => '26',
+                                                   'counts' => '0.000'
+                                                 },
+                                                 {
+                                                   'reg' => '3',
+                                                   'pixels' => '53',
+                                                   'counts' => '0.000'
+                                                 },
+                                                 {
+                                                   'reg' => '4',
+                                                   'pixels' => '86',
+                                                   'counts' => '2.000'
+                                                 },
+                                                 {
+                                                   'reg' => '5',
+                                                   'pixels' => '103',
+                                                   'counts' => '0.000'
+                                                 },
+                                                 {
+                                                   'reg' => '6',
+                                                   'pixels' => '131',
+                                                   'counts' => '0.000'
+                                                 },
+                                                 {
+                                                   'reg' => '7',
+                                                   'pixels' => '165',
+                                                   'counts' => '2.000'
+                                                 },
+                                                 {
+                                                   'reg' => '8',
+                                                   'pixels' => '186',
+                                                   'counts' => '3.000'
+                                                 },
+                                                 {
+                                                   'reg' => '9',
+                                                   'pixels' => '205',
+                                                   'counts' => '1.000'
+                                                 },
+                                                 {
+                                                   'reg' => '10',
+                                                   'pixels' => '252',
+                                                   'counts' => '3.000'
+                                                 },
+                                                 {
+                                                   'reg' => '11',
+                                                   'pixels' => '262',
+                                                   'counts' => '5.000'
+                                                 },
+                                                 {
+                                                   'reg' => '12',
+                                                   'pixels' => '299',
+                                                   'counts' => '4.000'
+                                                 },
+                                                 {
+                                                   'reg' => '13',
+                                                   'pixels' => '324',
+                                                   'counts' => '3.000'
+                                                 },
+                                                 {
+                                                   'reg' => '14',
+                                                   'pixels' => '344',
+                                                   'counts' => '4.000'
+                                                 },
+                                                 {
+                                                   'reg' => '15',
+                                                   'pixels' => '378',
+                                                   'counts' => '4.000'
+                                                 },
+                                                 {
+                                                   'reg' => '16',
+                                                   'pixels' => '404',
+                                                   'counts' => '5.000'
+                                                 },
+                                                 {
+                                                   'reg' => '17',
+                                                   'pixels' => '432',
+                                                   'counts' => '5.000'
+                                                 },
+                                                 {
+                                                   'reg' => '18',
+                                                   'pixels' => '450',
+                                                   'counts' => '4.000'
+                                                 },
+                                                 {
+                                                   'reg' => '19',
+                                                   'pixels' => '484',
+                                                   'counts' => '8.000'
+                                                 },
+                                                 {
+                                                   'reg' => '20',
+                                                   'pixels' => '508',
+                                                   'counts' => '9.000'
+                                                 }
+                                               ],
+                                  'widths' => [
+                                                4,
+                                                12,
+                                                9
+                                              ],
+                                  'comments' => [
+                                                  ' source_data'
+                                                ]
+                                }
                    },
-       'bkgd_sub' => {
-                       'widths' => [
-                                     4,
-                                     12,
-                                     9,
-                                     12,
-                                     9,
-                                     9,
-                                     9,
-                                     9
-                                   ],
-                       'comments' => [
-                                       ' background-subtracted results'
-                                     ],
-                       'names' => [
-                                    'reg',
-                                    'net_counts',
-                                    'error',
-                                    'background',
-                                    'berror',
-                                    'area',
-                                    'surf_bri',
-                                    'surf_err'
-                                  ],
-                       'records' => [
-                                      {
-                                        'error' => '1.732',
-                                        'reg' => '1',
-                                        'surf_err' => '0.596',
-                                        'area' => '2.90',
-                                        'background' => '0.372',
-                                        'net_counts' => '2.628',
-                                        'surf_bri' => '0.905',
-                                        'berror' => '0.026'
-                                      },
-                                      {
-                                        'error' => '3.873',
-                                        'reg' => '2',
-                                        'surf_err' => '0.640',
-                                        'area' => '6.05',
-                                        'background' => '0.776',
-                                        'net_counts' => '14.224',
-                                        'surf_bri' => '2.351',
-                                        'berror' => '0.055'
-                                      },
-                                      {
-                                        'error' => '4.125',
-                                        'reg' => '3',
-                                        'surf_err' => '0.310',
-                                        'area' => '13.31',
-                                        'background' => '1.706',
-                                        'net_counts' => '15.294',
-                                        'surf_bri' => '1.149',
-                                        'berror' => '0.120'
-                                      },
-                                      {
-                                        'error' => '4.363',
-                                        'reg' => '4',
-                                        'surf_err' => '0.212',
-                                        'area' => '20.58',
-                                        'background' => '2.637',
-                                        'net_counts' => '16.363',
-                                        'surf_bri' => '0.795',
-                                        'berror' => '0.186'
-                                      },
-                                      {
-                                        'error' => '4.905',
-                                        'reg' => '5',
-                                        'surf_err' => '0.189',
-                                        'area' => '25.90',
-                                        'background' => '3.319',
-                                        'net_counts' => '20.681',
-                                        'surf_bri' => '0.798',
-                                        'berror' => '0.234'
-                                      },
-                                      {
-                                        'error' => '3.883',
-                                        'reg' => '6',
-                                        'surf_err' => '0.123',
-                                        'area' => '31.47',
-                                        'background' => '4.033',
-                                        'net_counts' => '10.967',
-                                        'surf_bri' => '0.349',
-                                        'berror' => '0.284'
-                                      },
-                                      {
-                                        'error' => '3.890',
-                                        'reg' => '7',
-                                        'surf_err' => '0.096',
-                                        'area' => '40.67',
-                                        'background' => '5.212',
-                                        'net_counts' => '9.788',
-                                        'surf_bri' => '0.241',
-                                        'berror' => '0.368'
-                                      },
-                                      {
-                                        'error' => '4.021',
-                                        'reg' => '8',
-                                        'surf_err' => '0.089',
-                                        'area' => '45.27',
-                                        'background' => '5.801',
-                                        'net_counts' => '10.199',
-                                        'surf_bri' => '0.225',
-                                        'berror' => '0.409'
-                                      },
-                                      {
-                                        'error' => '5.121',
-                                        'reg' => '9',
-                                        'surf_err' => '0.098',
-                                        'area' => '52.29',
-                                        'background' => '6.701',
-                                        'net_counts' => '19.299',
-                                        'surf_bri' => '0.369',
-                                        'berror' => '0.473'
-                                      },
-                                      {
-                                        'error' => '4.501',
-                                        'reg' => '10',
-                                        'surf_err' => '0.080',
-                                        'area' => '56.16',
-                                        'background' => '7.197',
-                                        'net_counts' => '12.803',
-                                        'surf_bri' => '0.228',
-                                        'berror' => '0.508'
-                                      },
-                                      {
-                                        'error' => '5.690',
-                                        'reg' => '11',
-                                        'surf_err' => '0.084',
-                                        'area' => '67.54',
-                                        'background' => '8.656',
-                                        'net_counts' => '23.344',
-                                        'surf_bri' => '0.346',
-                                        'berror' => '0.611'
-                                      },
-                                      {
-                                        'error' => '5.604',
-                                        'reg' => '12',
-                                        'surf_err' => '0.080',
-                                        'area' => '69.96',
-                                        'background' => '8.966',
-                                        'net_counts' => '22.034',
-                                        'surf_bri' => '0.315',
-                                        'berror' => '0.632'
-                                      },
-                                      {
-                                        'error' => '5.523',
-                                        'reg' => '13',
-                                        'surf_err' => '0.070',
-                                        'area' => '78.91',
-                                        'background' => '10.114',
-                                        'net_counts' => '19.886',
-                                        'surf_bri' => '0.252',
-                                        'berror' => '0.713'
-                                      },
-                                      {
-                                        'error' => '4.194',
-                                        'reg' => '14',
-                                        'surf_err' => '0.049',
-                                        'area' => '84.72',
-                                        'background' => '10.858',
-                                        'net_counts' => '6.142',
-                                        'surf_bri' => '0.072',
-                                        'berror' => '0.766'
-                                      },
-                                      {
-                                        'error' => '4.547',
-                                        'reg' => '15',
-                                        'surf_err' => '0.050',
-                                        'area' => '91.02',
-                                        'background' => '11.665',
-                                        'net_counts' => '8.335',
-                                        'surf_bri' => '0.092',
-                                        'berror' => '0.823'
-                                      },
-                                      {
-                                        'error' => '4.668',
-                                        'reg' => '16',
-                                        'surf_err' => '0.047',
-                                        'area' => '98.28',
-                                        'background' => '12.595',
-                                        'net_counts' => '8.405',
-                                        'surf_bri' => '0.086',
-                                        'berror' => '0.888'
-                                      },
-                                      {
-                                        'error' => '4.986',
-                                        'reg' => '17',
-                                        'surf_err' => '0.049',
-                                        'area' => '102.64',
-                                        'background' => '13.154',
-                                        'net_counts' => '10.846',
-                                        'surf_bri' => '0.106',
-                                        'berror' => '0.928'
-                                      },
-                                      {
-                                        'error' => '4.896',
-                                        'reg' => '18',
-                                        'surf_err' => '0.045',
-                                        'area' => '108.93',
-                                        'background' => '13.960',
-                                        'net_counts' => '9.040',
-                                        'surf_bri' => '0.083',
-                                        'berror' => '0.985'
-                                      },
-                                      {
-                                        'error' => '4.372',
-                                        'reg' => '19',
-                                        'surf_err' => '0.037',
-                                        'area' => '116.67',
-                                        'background' => '14.953',
-                                        'net_counts' => '3.047',
-                                        'surf_bri' => '0.026',
-                                        'berror' => '1.055'
-                                      },
-                                      {
-                                        'error' => '4.386',
-                                        'reg' => '20',
-                                        'surf_err' => '0.036',
-                                        'area' => '122.97',
-                                        'background' => '15.760',
-                                        'net_counts' => '2.240',
-                                        'surf_bri' => '0.018',
-                                        'berror' => '1.112'
-                                      }
-                                    ]
-                     },
+       'hdr' => {
+                  'source' => {
+                                'data_file' => 'acisf01712N002_gti_img1_2.5-3.0.fits',
+                                'arcsec/pixel' => '0.492'
+                              },
+                  'column units' => {
+                                      'radii' => 'arcsecs',
+                                      'area' => 'arcsec**2',
+                                      'surf_bri' => 'cnts/arcsec**2',
+                                      'angles' => 'degrees',
+                                      'surf_err' => 'cnts/arcsec**2'
+                                    },
+                  'background' => {
+                                    'data_file' => 'acisf01712N002_gti_img1_2.5-3.0.fits'
+                                  }
+                },
        'bkgd' => {
+                   'regions' => {
+                                  'regions' => [
+                                                 '# Region file format: CIAO version 1.0',
+                                                 'annulus(4048,4133.25,40.650406,60.975609)'
+                                               ],
+                                  'title' => 'background_region(s)'
+                                },
                    'table' => {
-                                'widths' => [
-                                              4,
-                                              12,
-                                              9
-                                            ],
-                                'comments' => [],
                                 'names' => [
                                              'reg',
                                              'counts',
@@ -404,17 +181,335 @@ $c = {
                                 'records' => [
                                                {
                                                  'reg' => 'all',
-                                                 'counts' => '201.000',
-                                                 'pixels' => '6479'
+                                                 'pixels' => '6492',
+                                                 'counts' => '376.000'
                                                }
-                                             ]
-                              },
-                   'regions' => {
-                                  'title' => 'background_region(s)',
-                                  'regions' => [
-                                                 '# Region file format: CIAO version 1.0',
-                                                 'annulus(4048,4133.25,40.650406,60.975609)'
-                                               ]
-                                }
-                 }
+                                             ],
+                                'widths' => [
+                                              4,
+                                              12,
+                                              9
+                                            ],
+                                'comments' => [
+                                                ' background_data'
+                                              ]
+                              }
+                 },
+       'bkgd_sub' => {
+                       'table' => {
+                                    'names' => [
+                                                 'reg',
+                                                 'net_counts',
+                                                 'error',
+                                                 'background',
+                                                 'berror',
+                                                 'area',
+                                                 'surf_bri',
+                                                 'surf_err',
+                                                 'radius1',
+                                                 'radius2',
+                                                 'angle1',
+                                                 'angle2'
+                                               ],
+                                    'records' => [
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '0.000',
+                                                     'area' => '2.42',
+                                                     'radius2' => '1.000',
+                                                     'background' => '0.579',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '0.030',
+                                                     'net_counts' => '-0.579',
+                                                     'reg' => '1',
+                                                     'error' => '0.030',
+                                                     'surf_bri' => '-0.239',
+                                                     'surf_err' => '0.012'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '1.000',
+                                                     'area' => '6.29',
+                                                     'radius2' => '2.000',
+                                                     'background' => '1.506',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '0.078',
+                                                     'net_counts' => '-1.506',
+                                                     'reg' => '2',
+                                                     'error' => '0.078',
+                                                     'surf_bri' => '-0.239',
+                                                     'surf_err' => '0.012'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '2.000',
+                                                     'area' => '12.83',
+                                                     'radius2' => '3.000',
+                                                     'background' => '3.070',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '0.158',
+                                                     'net_counts' => '-3.070',
+                                                     'reg' => '3',
+                                                     'error' => '0.158',
+                                                     'surf_bri' => '-0.239',
+                                                     'surf_err' => '0.012'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '3.000',
+                                                     'area' => '20.82',
+                                                     'radius2' => '4.000',
+                                                     'background' => '4.981',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '0.257',
+                                                     'net_counts' => '-2.981',
+                                                     'reg' => '4',
+                                                     'error' => '1.437',
+                                                     'surf_bri' => '-0.143',
+                                                     'surf_err' => '0.069'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '4.000',
+                                                     'area' => '24.93',
+                                                     'radius2' => '5.000',
+                                                     'background' => '5.965',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '0.308',
+                                                     'net_counts' => '-5.965',
+                                                     'reg' => '5',
+                                                     'error' => '0.308',
+                                                     'surf_bri' => '-0.239',
+                                                     'surf_err' => '0.012'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '5.000',
+                                                     'area' => '31.71',
+                                                     'radius2' => '6.000',
+                                                     'background' => '7.587',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '0.391',
+                                                     'net_counts' => '-7.587',
+                                                     'reg' => '6',
+                                                     'error' => '0.391',
+                                                     'surf_bri' => '-0.239',
+                                                     'surf_err' => '0.012'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '6.000',
+                                                     'area' => '39.94',
+                                                     'radius2' => '7.000',
+                                                     'background' => '9.556',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '0.493',
+                                                     'net_counts' => '-7.556',
+                                                     'reg' => '7',
+                                                     'error' => '1.498',
+                                                     'surf_bri' => '-0.189',
+                                                     'surf_err' => '0.037'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '7.000',
+                                                     'area' => '45.02',
+                                                     'radius2' => '8.000',
+                                                     'background' => '10.773',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '0.556',
+                                                     'net_counts' => '-7.773',
+                                                     'reg' => '8',
+                                                     'error' => '1.819',
+                                                     'surf_bri' => '-0.173',
+                                                     'surf_err' => '0.040'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '8.000',
+                                                     'area' => '49.62',
+                                                     'radius2' => '9.000',
+                                                     'background' => '11.873',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '0.612',
+                                                     'net_counts' => '-10.873',
+                                                     'reg' => '9',
+                                                     'error' => '1.173',
+                                                     'surf_bri' => '-0.219',
+                                                     'surf_err' => '0.024'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '9.000',
+                                                     'area' => '61.00',
+                                                     'radius2' => '10.000',
+                                                     'background' => '14.595',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '0.753',
+                                                     'net_counts' => '-11.595',
+                                                     'reg' => '10',
+                                                     'error' => '1.889',
+                                                     'surf_bri' => '-0.190',
+                                                     'surf_err' => '0.031'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '10.000',
+                                                     'area' => '63.42',
+                                                     'radius2' => '11.000',
+                                                     'background' => '15.174',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '0.783',
+                                                     'net_counts' => '-10.174',
+                                                     'reg' => '11',
+                                                     'error' => '2.369',
+                                                     'surf_bri' => '-0.160',
+                                                     'surf_err' => '0.037'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '11.000',
+                                                     'area' => '72.38',
+                                                     'radius2' => '12.000',
+                                                     'background' => '17.317',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '0.893',
+                                                     'net_counts' => '-13.317',
+                                                     'reg' => '12',
+                                                     'error' => '2.190',
+                                                     'surf_bri' => '-0.184',
+                                                     'surf_err' => '0.030'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '12.000',
+                                                     'area' => '78.43',
+                                                     'radius2' => '13.000',
+                                                     'background' => '18.765',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '0.968',
+                                                     'net_counts' => '-15.765',
+                                                     'reg' => '13',
+                                                     'error' => '1.984',
+                                                     'surf_bri' => '-0.201',
+                                                     'surf_err' => '0.025'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '13.000',
+                                                     'area' => '83.27',
+                                                     'radius2' => '14.000',
+                                                     'background' => '19.924',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '1.027',
+                                                     'net_counts' => '-15.924',
+                                                     'reg' => '14',
+                                                     'error' => '2.248',
+                                                     'surf_bri' => '-0.191',
+                                                     'surf_err' => '0.027'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '14.000',
+                                                     'area' => '91.50',
+                                                     'radius2' => '15.000',
+                                                     'background' => '21.893',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '1.129',
+                                                     'net_counts' => '-17.893',
+                                                     'reg' => '15',
+                                                     'error' => '2.297',
+                                                     'surf_bri' => '-0.196',
+                                                     'surf_err' => '0.025'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '15.000',
+                                                     'area' => '97.79',
+                                                     'radius2' => '16.000',
+                                                     'background' => '23.399',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '1.207',
+                                                     'net_counts' => '-18.399',
+                                                     'reg' => '16',
+                                                     'error' => '2.541',
+                                                     'surf_bri' => '-0.188',
+                                                     'surf_err' => '0.026'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '16.000',
+                                                     'area' => '104.57',
+                                                     'radius2' => '17.000',
+                                                     'background' => '25.020',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '1.290',
+                                                     'net_counts' => '-20.020',
+                                                     'reg' => '17',
+                                                     'error' => '2.582',
+                                                     'surf_bri' => '-0.191',
+                                                     'surf_err' => '0.025'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '17.000',
+                                                     'area' => '108.93',
+                                                     'radius2' => '18.000',
+                                                     'background' => '26.063',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '1.344',
+                                                     'net_counts' => '-22.063',
+                                                     'reg' => '18',
+                                                     'error' => '2.410',
+                                                     'surf_bri' => '-0.203',
+                                                     'surf_err' => '0.022'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '18.000',
+                                                     'area' => '117.16',
+                                                     'radius2' => '19.000',
+                                                     'background' => '28.032',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '1.446',
+                                                     'net_counts' => '-20.032',
+                                                     'reg' => '19',
+                                                     'error' => '3.176',
+                                                     'surf_bri' => '-0.171',
+                                                     'surf_err' => '0.027'
+                                                   },
+                                                   {
+                                                     'angle2' => 'NA',
+                                                     'radius1' => '19.000',
+                                                     'area' => '122.97',
+                                                     'radius2' => '20.000',
+                                                     'background' => '29.422',
+                                                     'angle1' => 'NA',
+                                                     'berror' => '1.517',
+                                                     'net_counts' => '-20.422',
+                                                     'reg' => '20',
+                                                     'error' => '3.362',
+                                                     'surf_bri' => '-0.166',
+                                                     'surf_err' => '0.027'
+                                                   }
+                                                 ],
+                                    'widths' => [
+                                                  4,
+                                                  12,
+                                                  9,
+                                                  12,
+                                                  9,
+                                                  9,
+                                                  9,
+                                                  9,
+                                                  9,
+                                                  9,
+                                                  9,
+                                                  9
+                                                ],
+                                    'comments' => [
+                                                    ' background-subtracted results'
+                                                  ]
+                                  }
+                     }
      };
